@@ -10,8 +10,8 @@ Alternatively **bold** to really emphasize something.
 # If it's important enough it could become a heading
 ## Or even a subheading
 
-We can also link other files or sites like [Joe's](https://jpolitz.github.io/cse-15l-lab-report/index.html)
-Or add images like ![Image](http://url/favicon.png)
+We can also link other files or sites like [Joe's](https://jpolitz.github.io/cse-15l-lab-report/index.html). \
+Or add images like ![Image](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
 
 We could also quote something long:
 > The .md extension stands for “Markdown,” which is a particular text format used for writing. 
