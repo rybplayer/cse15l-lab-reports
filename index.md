@@ -1,5 +1,8 @@
-CSE15L FA23 Lab 1
-Example Markdown file.
+# Ryan Batubara's CSE15L Homepage
+
+[**Link to Lab Report 1**](https://rybplayer.github.io/cse15l-lab-reports/lab1report.html)
+
+Example Markdown features:
 
 We can use *italics* to slightly emphasize something.
 Alternatively **bold** to really emphasize something.
