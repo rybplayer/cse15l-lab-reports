@@ -72,4 +72,43 @@ This is not an error.
 
 ## The `cat` command
 
-Here is an example of a `cat` with no argument:
+Here is an example of `cat` with no argument:
+```
+[user@sahara ~]$ cat
+
+```
+The working directory when the command was run is `C:\\`. \
+Adding no arguments to `cat` does something very strange. 
+Namely, it opens a textbox in the terminal, where I can write something
+and when I hit enter, it prints it into the next line.
+This is not an error. However, I found no way to exit this mode
+except by running `^C` or force terminate.
+
+Here is an example of `cat` with a directory as argument:
+```
+[user@sahara ~/lecture1]$ cat messages
+cat: messages: Is a directory
+```
+The working directory when the command was run is `\lecture1`. \
+Adding a directory as argument to `cat` appears to print
+a confirmation that the argument is a directory. \ 
+This is not an error.
+
+Here is an example of `cat` with a file as argument:
+```
+[user@sahara ~/lecture1]$ cat Hello.java
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class Hello {
+  public static void main(String[] args) throws IOException {
+    String content = Files.readString(Path.of(args[0]), StandardCharsets.UTF_8);    
+    System.out.println(content);
+  }
+```
+The working directory when the command was run is `\lecture1`. \
+Adding a file as the argument to `cat` appears to print 
+the contents of the argument file, line by line, on the terminal.
+This is not an error.
