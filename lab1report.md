@@ -67,7 +67,7 @@ The working directory when the command was run is `\lecture1`. \
 Adding a file to `ls` appears to simply print out the name of
 the argument file. This is sensible, since if we treat this single 
 file as its own directory, the only file inside the directory is 
-itself, so `ls` outputs it to the terminal.
+itself, so `ls` outputs it to the terminal. \
 This is not an error. 
 
 ## The `cat` command
@@ -80,7 +80,7 @@ Here is an example of `cat` with no argument:
 The working directory when the command was run is the root directory `\home`. \
 Adding no arguments to `cat` does something very strange. 
 Namely, it opens a textbox in the terminal, where I can write something
-and when I hit enter, it prints it into the next line.
+and when I hit enter, it prints it into the next line. \
 This is not an error. However, I found no way to exit this mode
 except by running `^C` or force terminate.
 
@@ -110,5 +110,5 @@ public class Hello {
 ```
 The working directory when the command was run is `\lecture1`. \
 Adding a file as the argument to `cat` appears to print 
-the contents of the argument file, line by line, on the terminal.
+the contents of the argument file, line by line, on the terminal. \
 This is not an error.
