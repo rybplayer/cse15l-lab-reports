@@ -8,7 +8,7 @@ Here is an example of `cd` with no argument:
 [user@sahara ~]$
 ```
 The working directory when the command was run is `/lecture1`. \
-It appears a no-arg `cd` returns to the parent directory `C:\\`, 
+It appears a no-arg `cd` returns to the parent directory `/home`, 
 or more specifically the most direct parent directory. \
 This is not an error.
 
@@ -17,8 +17,8 @@ Here is an example of `cd` with a path to a directory:
 [user@sahara ~]$ cd lecture1
 [user@sahara ~/lecture1]$
 ```
-The working directory when the command was run is `C:\\`. \
-Adding a folder or path as the argument to 'cd' appears to
+The working directory when the command was run is the root directory `/home`. \
+Adding a folder or path as the argument to `cd` appears to
 change the current directory into the argument path. \
 This is not an error.
 
@@ -28,8 +28,8 @@ Here is an example of `cd` with a path to a file:
 bash: cd: Hello.java: No such file or directory
 [user@sahara ~]$ 
 ```
-The working directory when the command was run is `C:\\`. \
-Adding a file to cd appears to do nothing. \
+The working directory when the command was run is the root directory `/home`. \
+Adding a file to `cd` appears to do nothing. \
 This is an error, which makes sense since `cd` changes the 
 working directory, but a file is not a directory, so 
 `cd` does nothing.
@@ -77,7 +77,7 @@ Here is an example of `cat` with no argument:
 [user@sahara ~]$ cat
 
 ```
-The working directory when the command was run is `C:\\`. \
+The working directory when the command was run is the root directory `\home`. \
 Adding no arguments to `cat` does something very strange. 
 Namely, it opens a textbox in the terminal, where I can write something
 and when I hit enter, it prints it into the next line.
