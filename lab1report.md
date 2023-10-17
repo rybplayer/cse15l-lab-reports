@@ -38,13 +38,13 @@ working directory, but a file is not a directory, so
 
 Here is an example of `ls` with no argument:
 ```
-[user@sahara ~]$ cd Hello.java
-bash: cd: Hello.java: No such file or directory
-[user@sahara ~]$ 
+[user@sahara ~/lecture1]$ ls
+Hello.class  Hello.java  messages  README  URIMain.class
+[user@sahara ~/lecture1]$ 
 ```
 The working directory when the command was run is `\lecture1`. \
 Adding no argument to `ls` lists all the files and directories
-in the working directory. \ 
+in the working directory. \
 This is not an error.
 
 Here is an example of a `ls` with a directory as argument:
@@ -52,7 +52,7 @@ Here is an example of a `ls` with a directory as argument:
 [user@sahara ~/lecture1]$ ls messages
 en-us.txt  es-mx.txt  zh-cn.txt
 ```
-The working directory when the command was run is `\lecture1`. \ 
+The working directory when the command was run is `\lecture1`. \
 Adding a directory to `ls` appears to list out all the files
 or directories in the argument directory. \
 This is not an error.
@@ -91,8 +91,10 @@ cat: messages: Is a directory
 ```
 The working directory when the command was run is `\lecture1`. \
 Adding a directory as argument to `cat` appears to print
-a confirmation that the argument is a directory. \ 
-This is not an error.
+a confirmation that the argument is a directory, rather
+than say printing the contents of files in the directory 
+as one might expect from `cat`. \
+This is an error.
 
 Here is an example of `cat` with a file as argument:
 ```
