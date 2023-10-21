@@ -1,6 +1,7 @@
 # Ryan Batubara's CSE15L Homepage
 
 [**Link to Lab Report 1**](https://rybplayer.github.io/cse15l-lab-reports/lab1report.html)
+[**Link to Lab Report 2**](https://rybplayer.github.io/cse15l-lab-reports/lab2report.html)
 
 Example Markdown features:
 
