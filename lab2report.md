@@ -3,7 +3,7 @@
 ## Part 1: String Server
 
 Here is the code I wrote for the specified server:
-![Server.png](Server.png)
+![ServerCode.png](ServerCode.png)
 
 Here is what the server looks like when starting up:
 ![ServerStart.png](ServerStart.png)
