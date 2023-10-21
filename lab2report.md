@@ -10,21 +10,21 @@ Here is what the server looks like when starting up:
 
 Here I add the string `Hi` using `\add-message` request:
 ![ServerAdd1.png](ServerAdd1.png)
-1. Which methods in your code are called?
-2. What are the relevant arguments to those methods, and the values of any relevant fields of the class?
-3. How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.
+1. The method `handleRequest` is called.
+2. The method takes in the URL as an argument, and then modifies the addedList field.
+3. First, the URL changes. Specifically, `url` now contains `"/add-message"` and so the string `"Hello"` right of the `=` gets added to the end of the addedList ArrayList using .add().
 
 The result is as follows:
-![ServerResult1.png](ServerResult2.png)
+![ServerResult1.png](ServerResult1.png)
 
 Here I add the string `Hello` using `\add-message` again:
 ![ServerAdd2.png](ServerAdd2.png)
-1. Which methods in your code are called?
-2. What are the relevant arguments to those methods, and the values of any relevant fields of the class?
-3. How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.
+1. The method `handleRequest` is called.
+2. The method takes in the URL as an argument, and then modifies the addedList field.
+3. First, the URL changes. Specifically, `url` now contains `"/add-message"` and so the string `"Hi"` right of the `=` gets added to the end of the addedList ArrayList using .add().
 
 The result is as follows:
-![ServerAddResult.png](ServerAddResult.png)
+![ServerAddResult.png](ServerResult2.png)
 
 ## Part 2
 
