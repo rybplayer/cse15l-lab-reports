@@ -67,6 +67,7 @@ given an input string, will search for all such strings in a given path regardle
 of whether the letters are capitalized or not. The two examples below show this is useful
 if we don't know the precise capitalization for a name, but know how it is spelled:
 <code>
+```
 (base) Ryans-Air:docsearch ryanbatubara$ grep -r "jstor" technical/plos
 (base) Ryans-Air:docsearch ryanbatubara$ grep -ir "jstor" technical/plos
 technical/plos/journal.pbio.0020010.txt:        JSTOR is successful for reasons its founders did not intend. Bill Bowen's inspired
@@ -92,6 +93,7 @@ technical/plos/journal.pbio.0020010.txt:        that outside the United States, 
 technical/plos/journal.pbio.0020010.txt:        Leaving aside quibbles and caveats about the book and about JSTOR, this remains a
 technical/plos/journal.pbio.0020010.txt:        has not gone away in the ten years since JSTOR was conceived, but the ultimate solution—the
 technical/plos/journal.pbio.0020010.txt:        availability of electronic content—has become closer, and JSTOR's success has encouraged
+```
 <code>
 
 ```
