@@ -1,3 +1,4 @@
+<code>
 # Lab Report 3
 
 ## Part 1: Bugs
@@ -66,7 +67,6 @@ First, I learned about `-i` which makes grep case insensitive. This means that `
 given an input string, will search for all such strings in a given path regardless
 of whether the letters are capitalized or not. The two examples below show this is useful
 if we don't know the precise capitalization for a name, but know how it is spelled:
-<code>
 ```
 (base) Ryans-Air:docsearch ryanbatubara$ grep -r "jstor" technical/plos
 (base) Ryans-Air:docsearch ryanbatubara$ grep -ir "jstor" technical/plos
@@ -94,7 +94,6 @@ technical/plos/journal.pbio.0020010.txt:        Leaving aside quibbles and cavea
 technical/plos/journal.pbio.0020010.txt:        has not gone away in the ten years since JSTOR was conceived, but the ultimate solution—the
 technical/plos/journal.pbio.0020010.txt:        availability of electronic content—has become closer, and JSTOR's success has encouraged
 ```
-<code>
 
 ```
 (base) Ryans-Air:docsearch ryanbatubara$ grep -r "macfarlane" technical/plos
