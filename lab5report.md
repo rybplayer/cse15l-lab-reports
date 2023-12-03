@@ -97,7 +97,7 @@ The new `test.sh` is as follows:
 
 ![](Recap_testsh.png)
 
-This endd the description of the debugging scenario, as well as how to fix the bug.
+This ends the description of the debugging scenario, as well as how to fix the bug.
 
 ## Part 2: Reflection
 
