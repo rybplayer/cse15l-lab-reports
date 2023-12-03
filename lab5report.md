@@ -1,6 +1,6 @@
 # Lab Report 5
 
-## Part 1
+## Part 1: Debugging
 
 The following debugging scenario is loosely inspired by my personal experience in a lab earlier this quarter.
 
@@ -52,3 +52,55 @@ This guess is consistent when I try to run other Java files, such as `java src/L
 ![](Post2_NewBashRun.png)
 
 Running the new file works! Thank you!
+
+### Information about the setup
+
+The above debugging scenario is based off the fact that `java` cannot accept path arguments for the file to run. That is, the command must be executed in the same directory as some `file`, as passing some `path/file` into Java will instead make it look for a file named `path/file` rather than look if there exists a `file` in the directory `path/`. 
+
+More specifically, the symptom the student experienced, namely the `java.lang.IllegalArgumentException: Could not find class [src/ListExamplesTests]` was a result of a bug on line 6 of `test.sh` which called `java` on a path `src/ListExamplesTests`.
+
+In the beginning, the following file structure was present:
+
+![](Post1_Files.png)
+
+This of course induced the above symptoms, and caused the student to rewrite `test.sh` and move it into `src/` as below:
+
+![](Recap_Files.png)
+
+The contents of each file before fixing the bug are as follows:
+
+The directory `lib` contained two files, `hamcrest-core-1.3.jar` and `junit-4.13.2.jar`, both of which are Java `jar` files that contain the libraries necessary to import and use JUnit tests.
+
+The directory `src` contains all of the relevant Java files:
+- `ListExamples.java`, which is a working implementation of `filter()` and `merge()`, as seen earlier in class, and is screenshotted here: ![](Recap_ListExamples.java). `ListExamples.class` is the Java compiled `.class` version of `ListExamples.java`'s `ListExamples` class, while `StringChecker.class` is Java's compiled `.class` version of `ListExamples.java`'s `StringChecker` interface.
+- `ListExamples.java`, which is a working test of `ListExamples.java` using JUnit, as seen earlier in class, and is screenshotted here: ![](Recap_ListExamplesTests.png). `ListExamplesTests.class` is the Java compiled `.class` version of `ListExamplesTests.java` and is the main subject of the bug in the above debugging scenario.
+
+In the beginning, `test.sh` was not in either folder, and had the following contents:
+
+![](Post1_Bash.png)
+
+The bug could be triggered by running `test.sh`, which of course contained the command `java -cp $CLASSPATH org.junit.runner.JUnitCore src/ListExamplesTests`, which causes the bug. Here is a screenshot of this happening:
+
+![](Post1_Error.png)
+
+The bug could be fixed by executing `test.sh` and thus the `java` command in the same directory as `ListExamplesTests.class`, i.e. inside of `src`. So the student did three key steps:
+
+1. First, move the `test.sh` file into `src`, for example by dragging the file icon of `test.sh` on the left menubar of VSCode into the `src` folder.
+2. Then, the edit line 6 from `java -cp $CLASSPATH org.junit.runner.JUnitCore src/ListExamplesTests` to `java -cp $CLASSPATH org.junit.runner.JUnitCore ListExamplesTests`, since we are now in the same directory and thus a path is not necessary.
+3. Finally, change the classpath bash variable from `CLASSPATH=".:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar"` to `CLASSPATH=".:../lib/hamcrest-core-1.3.jar:../lib/junit-4.13.2.jar"`, reflecting the change in relative paths to both library files, as we have moved from the main directory to `src`.
+
+These changes create this new file sturcture:
+
+![](Recap_Files.png)
+
+The new `test.sh` is as follows:
+
+![](Recap_testsh.png)
+
+This endd the description of the debugging scenario, as well as how to fix the bug.
+
+## Part 2: Reflection
+
+I found the whole concept of `jdb` to be the most interesting thing I have learned from the second half of CSE15L, and wished I learned it earlier. For the longest time, I have always inserted random `System.out.println()` statements in my code in order to debug and get a sense of what is going on. In my experience, most of the time I know roughly what line(s) a bug is present at from its symptoms. However, I am unable to understand why some failure-inducing input causes a failure, hence the need for `System.out.println()`.
+
+With `jdb`, I can stop the program at that specific line, and check if the value of variables is what I expect from the program, or whether I have made an error somewhere. When we used it to check the length of `hashed` in `BCyrpt` in the last skill demo, I felt like that was the perfect example of how powerful `jdb` is.
