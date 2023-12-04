@@ -1,5 +1,7 @@
 # Lab Report 5
 
+A note to the grader: Throughout this lab report, I used screenshots rather than code blocks to express the contents of files and file structures. I had done this not only because it was specifically recommended to use screenshots in the debugging EdStem post, but also because in previous lab reports, I had received feedback that long lines of code were cropped when code blocks in markdown are exported to pdf. I had asked an EdStem post about whether markdown code blocks must be used for the fourth section of part 1, but as it remains unanswered, I ask for the grader's understanding.
+
 ## Part 1: Debugging
 
 The following debugging scenario is loosely inspired by my personal experience in a lab earlier this quarter.
